@@ -40,4 +40,7 @@ mssg = mssg.lower()
 for i in mssg:
     if i.isalnum() == False:
         continue
-    print(morse_code[i], end=" ")
+    if morse_code.get(i) == None:
+        continue
+    else:
+        print(morse_code[i], end=" ")
