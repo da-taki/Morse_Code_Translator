@@ -1,3 +1,5 @@
+# Making a dictionary where letters and digits are keys and the 
+# values are their respective translation in morse morse_code
 morse_code = {"a" : ".-",
               "b" : "-...",
               "c" : "-.-.",
@@ -35,12 +37,18 @@ morse_code = {"a" : ".-",
               "8" : "---..",
               "9" : "----."}
 
+#getting the input from the user
 mssg = input("Enter the line which you want to translate to morse code: ")
+
+#turing the message into lower case
 mssg = mssg.lower()
+
+#using a for loop to translate the input into morse code 
 for i in mssg:
-    if i.isalnum() == False:
-        continue
-    if morse_code.get(i) == None:
-        continue
+    if i.isalnum():                   #making sure the values are alphanumeric as I havent added translation for symbols
+        if morse_code.get(i) == None:
+            continue
+        else:
+            print(morse_code[i], end=" ")
     else:
-        print(morse_code[i], end=" ")
+        continue
