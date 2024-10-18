@@ -35,7 +35,20 @@ morse_code = {"a" : ".-",
               "6" : "-....",
               "7" : "--...",
               "8" : "---..",
-              "9" : "----."}
+              "9" : "----.",
+              "!" : "-.-.--",
+              "@" : ".--.-.",
+              "(" : "-.--.",
+              ")" : "-.--.-",
+              "=" : "-...-",
+              "+" : ".-.-.",
+              "." : ".-.-.-",
+              "?" : "..--..",
+              "," : "--..--",
+              "-" : "-....-",
+              "/" : "-..-.",
+              ":" : "---...",
+              "\"": ".-..-."}
 
 #getting the input from the user
 mssg = input("Enter the line which you want to translate to morse code: ")
@@ -45,10 +58,8 @@ mssg = mssg.lower()
 
 #using a for loop to translate the input into morse code 
 for i in mssg:
-    if i.isalnum():                   #making sure the values are alphanumeric as I havent added translation for symbols
-        if morse_code.get(i) == None:
-            continue
-        else:
-            print(morse_code[i], end=" ")
-    else:
+    if morse_code.get(i) == None:
         continue
+    else:
+        print(morse_code[i], end=" ")
+
